@@ -5,6 +5,7 @@ import java.util.Set;
 import sae.dungeon.Coord;
 
 
+
 public class Node {
 	private String name;
 	private Set<Node> neighbors;
@@ -25,12 +26,8 @@ public class Node {
 		return neighbors;
 	}
 	
-	public void addNeighbors(Node node) {
-		neighbors.add(node);	
-	}
-	
 	public String toString() {
-        return "Node{name='" + name + "', coord=" + coord + '}';
+        return "Node{name='" + name + ", coord=" + coord + '}';
     }
 	
 	public Coord getCoords() {
@@ -42,11 +39,11 @@ public class Node {
 	}
 	
 	public boolean equals(Object object) {
-        	if (this == object) return true;
-	        if (object == null || getClass() != object.getClass()) return false;
-	        Node node = (Node) object;
-	        return name.equals(node.name);
-    	}
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Node node = (Node) object;
+        return name.equals(node.name);
+    }
 	
 
 }
