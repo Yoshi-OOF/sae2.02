@@ -5,62 +5,56 @@ import sae.graph.Node;
 
 import java.util.*;
 
+// A chaque fois qu'il passe dans un noeud il marque le previous de ce noeud (getPrevious) et à la fil il a plus qu'a remonter les prédécessseurs pour trouver le chemin
+// Constructeur : SolverWithBFS(Node start, Node end)
 public class SolverWithBFS implements Solver {
-    private GraphSoluce graphSoluce;
-    private Node startNode;
-    private Node endNode;
-    private List<Node> path;
+	private Node start;
+	private Node end;
+	private GraphSoluce soluce;
+	private int steps;
 
-	public SolverWithBFS(Node startNode, Node endNode) {
-		this.graphSoluce = new GraphSoluce();
-    	this.startNode = startNode;
-        this.endNode = endNode;
-        this.path = new ArrayList<>();
-    }
-    
-    @Override
-	public GraphSoluce getSoluce() {
-		for (Node node : path) {
-			graphSoluce.add(node);
-		}
-		return graphSoluce;
+	public SolverWithBFS(Node start, Node end) {
+		this.start = start;
+		this.end = end;
+		this.soluce = new GraphSoluce();
+		this.steps = 0;
 	}
 
 	@Override
 	public void resolve() {
-        Queue<Node> queue = new LinkedList<>();
-        Map<Node, Node> parent = new HashMap<>();
-        Set<Node> visited = new HashSet<>();
+		Queue<Node> queue = new LinkedList<>();
+		Set<Node> visited = new HashSet<>();
+		Map<Node, Node> previous = new HashMap<>();
+		queue.add(start);
+		visited.add(start);
+		while (!queue.isEmpty()) {
+			Node current = queue.poll();
+			if (current.equals(end)) {
+				Node node = current;
+				while (node != null) {
+					soluce.add(node);
+					node = previous.get(node);
+				}
+				return;
+			}
+			for (Node neighbor : current.neighbors()) {
+				if (!visited.contains(neighbor)) {
+					queue.add(neighbor);
+					visited.add(neighbor);
+					previous.put(neighbor, current);
+				}
+			}
+			steps++;
+		}
+	}
 
-        queue.add(startNode);
-        visited.add(startNode);
-
-        while (!queue.isEmpty()) {
-            Node current = queue.poll();
-
-            if (current.equals(endNode)) {
-                Node node = current;
-                while (node != null) {
-                    path.add(node);
-                    node = parent.get(node);
-                }
-                Collections.reverse(path);
-                return;
-            }
-
-            for (Node neighbor : current.neighbors()) {
-                if (!visited.contains(neighbor)) {
-                    queue.add(neighbor);
-                    visited.add(neighbor);
-                    parent.put(neighbor, current);
-                }
-            }
-        }
+	@Override
+	public GraphSoluce getSoluce() {
+		return soluce;
 	}
 
 	@Override
 	public int getSteps() {
-		return path.size();
+		return steps;
 	}
-    
 }
