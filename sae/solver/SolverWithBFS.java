@@ -11,9 +11,9 @@ public class SolverWithBFS implements Solver {
     private Node endNode;
     private List<Node> path;
 
-    public SolverWithBFS(GraphSoluce graphSoluce, Node startNode, Node endNode) {
-        this.graphSoluce = graphSoluce;
-        this.startNode = startNode;
+	public SolverWithBFS(Node startNode, Node endNode) {
+		this.graphSoluce = new GraphSoluce();
+    	this.startNode = startNode;
         this.endNode = endNode;
         this.path = new ArrayList<>();
     }
