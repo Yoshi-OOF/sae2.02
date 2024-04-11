@@ -30,7 +30,7 @@ public class Node {
 	}
 	
 	public String toString() {
-        return "Node{name='" + name + "', neighbors=" + neighbors + ", coord=" + coord + '}';
+        return "Node{name='" + name + "', coord=" + coord + '}';
     }
 	
 	public Coord getCoords() {
