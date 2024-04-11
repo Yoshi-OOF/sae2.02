@@ -1,25 +1,32 @@
 package sae.graph;
+
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Graph {
-    private Map<String, Node> nodes = new HashMap<>();
+    private Set<Node> nodes;
 
+    public Graph() {
+    	nodes = new HashSet<>();
+    }
+    
     public void addNode(Node node) {
-        nodes.put(node.getName(), node);
+        nodes.add(node);
     }
 
     public void addEdge(Node from, Node to) {
-        if (nodes.containsKey(from.getName()) && nodes.containsKey(to.getName())) {
+        if (nodes.contains(from) && nodes.contains(to)) {
             from.addNeighbour(to);
         }
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (Node node : nodes.values()) {
-            sb.append(node).append("\n");
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Node node : nodes) {
+        	stringBuilder.append(node).append("\n");
         }
-        return sb.toString();
+        return stringBuilder.toString();
     }
 }
