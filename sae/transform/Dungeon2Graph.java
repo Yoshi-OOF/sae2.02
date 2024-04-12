@@ -64,6 +64,7 @@ public class Dungeon2Graph {
 	On récupère les salles correspondantes à ces deux noeuds.
 	On récupère la direction entre ces deux salles.
 	On ajoute cette direction à la solution.
+	On retourne la solution.
 	/*/
 	public DungeonSoluce transform(GraphSoluce soluceGraph) {
 		DungeonSoluce soluce = new DungeonSoluce();
@@ -73,22 +74,18 @@ public class Dungeon2Graph {
 			Node next = nodes.get(i - 1);
 			Room currentRoom = mappedRoom(current);
 			Room nextRoom = mappedRoom(next);
-			Direction direction = directionBetween(currentRoom, nextRoom);
+			
+			Direction direction = null;
+			for (Direction directionRetour : currentRoom.getNextRooms().keySet()) {
+				if (currentRoom.getNextRooms().get(direction).equals(nextRoom)) {
+					direction = directionRetour;
+				}
+			}
+
 			soluce.addDirection(direction);
 		}
 		return soluce;
 	}
-
-	private Direction directionBetween(Room currentRoom, Room nextRoom) {
-		for (Direction direction : currentRoom.getNextRooms().keySet()) {
-			if (currentRoom.getNextRooms().get(direction).equals(nextRoom)) {
-				return direction;
-			}
-		}
-		return null;
-	}
-	
-	
 	
 
 }
