@@ -35,20 +35,23 @@ public class SolverWithBFS implements Solver{
 				}
 			}
 		}
-		Node current = nodeB;
-		soluce.add(current);
-		while (!current.equals(nodeA)) {
-			current = nodeB.getPrevious();
-			soluce.add(current);
-			
-		}
 		
+	    Node current = nodeB;	
+        while (current != null) {
+			this.soluce.add(current);
+			current = current.getPrevious();
+        }
+        
+	    
 	}
 	
 	public GraphSoluce getSoluce() {
 		return soluce;
 	}
-	
-	
+
+	@Override
+	public int getSteps() {
+		return soluce.getSoluce().size();
+	}
 	
 }
