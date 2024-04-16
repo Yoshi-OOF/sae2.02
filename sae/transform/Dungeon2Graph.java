@@ -77,7 +77,7 @@ public class Dungeon2Graph {
 			
 			Direction direction = null;
 			for (Direction directionRetour : currentRoom.getNextRooms().keySet()) {
-				if (currentRoom.getNextRooms().get(direction).equals(nextRoom)) {
+				if (currentRoom.getNextRooms().get(directionRetour).equals(nextRoom)) {
 					direction = directionRetour;
 				}
 			}
