@@ -1,0 +1,18 @@
+package sae.solver;
+
+import sae.graph.Graph;
+import sae.graph.GraphSoluce;
+import sae.graph.Node;
+
+public class SolverWithAstar {
+	private Node start;
+	private Node end;
+	private GraphSoluce soluce;
+	
+	public SolverWithAstar( Node start, Node end) {
+		super();
+		this.start = start;
+		this.end = end;
+		soluce = new GraphSoluce();
+	}
+}

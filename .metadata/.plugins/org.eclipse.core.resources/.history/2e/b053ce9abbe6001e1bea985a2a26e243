@@ -1,0 +1,25 @@
+package Exo5;
+
+public class Fichier extends Element {
+    private int taille;
+
+    public Fichier(String nom, int taille) {
+        super(nom);
+        this.taille = taille;
+    }
+
+    public int getTaille() {
+        return taille;
+    }
+
+    @Override
+    public void afficheTaille() {
+        System.out.println("Taille du fichier '" + this.getNom() + "': " + this.taille);
+    }
+
+    @Override
+    public String toString() {
+        return "(F)-" + super.toString();
+    }
+
+}

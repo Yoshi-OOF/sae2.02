@@ -1,0 +1,16 @@
+package ex1;
+
+public class testLivre {
+
+	public static void main(String[] args) {
+		Livre l = new Livre();
+		Livre l2 = new Livre("Harry Potter", "J.K Rowling");
+		Livre l3 = new Livre("Ce Livre", "Moi", "Une Maison D'edition", 22);
+
+		System.out.println(l);
+		System.out.println(l2);
+		System.out.println(l3);
+
+	}
+
+}

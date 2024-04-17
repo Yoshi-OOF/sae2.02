@@ -1,0 +1,31 @@
+package sae.graph;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import sae.dungeon.Dungeon;
+import sae.dungeon.Room;
+
+public class Dungeon2Graph {
+	
+	private Map<Room,Node> couples;
+	private Graph graph;
+	
+	public Dungeon2Graph(Dungeon dungeon) {
+		super();
+		graph = new Graph();
+		couples = new HashMap<>();
+		List<Room> list = new ArrayList<>(dungeon.getRooms());
+		
+		for (int i = 0;i <= list.size();i++) {
+			Node node = new Node(list.get(i).getName(),list.get(i).getCoords());
+			graph.addNode(node);
+			couples.entrySet(list.get(i),node);
+		}
+		
+	}
+
+}

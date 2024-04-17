@@ -1,0 +1,42 @@
+package Exo1;
+
+class Dame extends Humain {
+    private String couleurRobe;
+    private boolean estLibre;
+
+    public Dame(String nom, String couleurRobe) {
+        super(nom);
+        this.couleurRobe = couleurRobe;
+        this.estLibre = true; 
+    }
+    
+    public void changerDeRobe(String couleur) {
+    	couleurRobe = couleur;
+    	System.out.println("Regardez ma nouvelle robe " + couleur + " !");
+    }
+    
+    public void liberer(Cowboy cowboy) {
+        if (estLibre) {
+            System.out.println(quelEstTonNom() + " : Je suis déjà libre, mais merci quand même, " + cowboy.quelEstTonNom() + " !");
+            return;
+        }
+        estLibre = true;
+        parler("Merci, " + cowboy.quelEstTonNom() + ", mon héros !");
+    }
+    
+    public void kidnapper() {
+        if (!estLibre) {
+            System.out.println(quelEstTonNom() + " : Je suis déjà captive !");
+            return;
+        }
+        estLibre = false;
+        parler("AHHHH ! Au secours !");
+    }
+    
+    @Override
+    public String quelEstTonNom() {
+        return "Miss " + super.quelEstTonNom();
+    }
+
+
+}

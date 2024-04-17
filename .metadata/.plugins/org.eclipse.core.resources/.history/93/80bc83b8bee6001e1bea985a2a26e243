@@ -1,0 +1,16 @@
+package Exo1;
+
+class Brigand extends Humain {
+    private String look = "méchant";
+    private int nombreDamesEnlevees;
+    private boolean estEnPrison;
+
+    public Brigand(String nom, String look) {
+        super(nom);
+        this.look = look;
+        this.nombreDamesEnlevees = 0;
+        this.estEnPrison = false;
+    }
+
+    // Implémentez les méthodes kidnapper et seFaireEmprisonner ici
+}

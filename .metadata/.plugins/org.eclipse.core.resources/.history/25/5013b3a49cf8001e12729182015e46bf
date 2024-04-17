@@ -1,0 +1,11 @@
+package sae.solver;
+
+import sae.graph.GraphSoluce;
+import sae.graph.Node;
+
+public interface Solver {
+	void resolve(Node nodeA, Node nodeB);
+	GraphSoluce getSoluce();
+	//int getSteps();
+
+}

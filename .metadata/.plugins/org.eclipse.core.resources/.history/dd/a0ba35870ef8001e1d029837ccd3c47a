@@ -1,0 +1,8 @@
+package sae.solver;
+
+public interface Solver {
+	void resolve();
+	GraphSoluce getSoluce();
+	int getSteps();
+
+}

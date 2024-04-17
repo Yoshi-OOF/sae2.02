@@ -1,0 +1,77 @@
+package ex4;
+
+import java.util.Comparator;
+
+public class Carte {
+	private static final String[] CARTES = { "As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valet", "Dame",
+			"Roi" };
+	private static final String[] COULEURS = { "Coeur","Pique","Carreau", "Trefle" };
+
+	private static int nbBuild = 0;
+
+//	private static final String NOM_DEFAUT="JOKER";
+//	private static final String COULEUR_DEFAUT="ORANGE";
+//	private static final int PUISSANCE_DEFAUT=-1;
+
+	private String nom;
+	private int couleur;
+	private int puissance;
+
+	public Carte() {
+		puissance = nbBuild % 13;
+		nom = CARTES[puissance];
+		couleur = nbBuild % 4;
+		nbBuild++;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Carte other = (Carte) obj;
+		return couleur == other.couleur && puissance == other.puissance;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public String getCouleur() {
+		return COULEURS[couleur];
+	}
+	public int getCouleurID() {
+		return couleur;
+	}
+	public int getPuissance() {
+		return puissance;
+	}
+
+	@Override
+	public String toString() {
+		return nom + " de " + COULEURS[couleur];
+	}
+	
+	static public Comparator<Carte> compareByPower  = new Comparator <Carte>() {
+
+	    public int compare(Carte carte1, Carte carte2) {
+
+	        return Integer.compare(carte1.getPuissance(),carte2.getPuissance());
+
+	    }
+	};	
+	static public Comparator<Carte> compareByColor = new Comparator <Carte>() {
+
+	    public int compare(Carte carte1, Carte carte2) {
+
+	        return Integer.compare(carte1.getCouleurID(),carte2.getCouleurID());
+
+	    }
+	};	
+
+
+	
+}

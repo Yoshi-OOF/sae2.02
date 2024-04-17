@@ -1,0 +1,23 @@
+package Exo1;
+
+class Cowboy extends Humain {
+    private int popularite;
+    private String adjectif;
+
+    public Cowboy(String nom, String adjectif) {
+        super(nom);
+        this.popularite = 0;
+        this.adjectif = adjectif;
+    }
+
+    public void tirerSur(Brigand brigand) {
+        parler("Le " + adjectif + " " + quelEstTonNom() + " tire sur " + brigand.quelEstTonNom() + ". PAN ! Prends ça, rascal !");
+    }
+
+    public void libererDame(Dame dame) {
+        dame.liberer(this);
+        popularite++;
+    }
+    
+    
+}

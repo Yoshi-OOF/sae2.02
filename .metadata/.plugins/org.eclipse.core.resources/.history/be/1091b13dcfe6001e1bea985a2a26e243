@@ -1,0 +1,17 @@
+package Exo1;
+
+public class Histoire {
+    public static void main(String[] args) {
+        Dame dame = new Dame("Lucy", "rouge");
+        Brigand brigand = new Brigand("Joe", "méchant");
+        Cowboy cowboy = new Cowboy("Billy", "vaillant");
+
+        brigand.kidnapper(dame);
+        cowboy.libererDame(dame);
+        dame.changerDeRobe("verte");
+        
+        System.out.println(dame.quelEstTonNom());
+        System.out.println(brigand.quelEstTonNom());
+        System.out.println(cowboy.quelEstTonNom());
+    }
+}

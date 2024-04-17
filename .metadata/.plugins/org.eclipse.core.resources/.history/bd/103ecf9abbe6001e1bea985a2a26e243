@@ -1,0 +1,76 @@
+package ex1;
+
+public class Livre {
+	private static final String EDITEUR_DEFAUT="Hasbro";
+	private static final int NB_PAGES_NON_RENSEIGNE=0;
+	private static int numLivre = 0;
+	
+	private int numero;
+	private String titre;
+	private String auteur;
+	private String editeur;
+	private int nbPages;
+	
+	public Livre() {
+		numero = ++numLivre;
+	}
+	
+	public Livre(String titreLivre, String auteurLivre) {
+		this();
+		titre = titreLivre;
+		auteur = auteurLivre;
+		editeur = EDITEUR_DEFAUT;
+		nbPages = NB_PAGES_NON_RENSEIGNE;
+	}
+	
+	public Livre(String titreLivre, String auteurLivre, String editeurLivre, int nbPagesLivre) {
+		this(titreLivre,auteurLivre);
+		editeur = editeurLivre;
+		nbPages = nbPagesLivre;
+	}
+
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+	public String getAuteur() {
+		return auteur;
+	}
+
+	public void setAuteur(String auteur) {
+		this.auteur = auteur;
+	}
+
+	public String getEditeur() {
+		return editeur;
+	}
+
+	public void setEditeur(String editeur) {
+		this.editeur = editeur;
+	}
+
+	public int getNbPages() {
+		return nbPages;
+	}
+
+	public void setNbPages(int nbPages) {
+		this.nbPages = nbPages;
+	}
+
+	@Override
+	public String toString() {
+		return "numero=" + numero + ", " + (titre != null ? "titre=" + titre + ", " : "")
+				+ (auteur != null ? "auteur=" + auteur + ", " : "")
+				+ (editeur != null ? "editeur=" + editeur + ", " : "") + "nbPages=" + nbPages;
+	}
+	
+	//pas dans sujet
+	public int getNumero() {
+		return numero;
+	}
+	
+}

@@ -1,0 +1,83 @@
+package TD3.Exo5;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Dossier extends Element {
+    public Dossier parent;
+
+    private List<Element> contenu;
+
+    public Dossier(String nom) {
+        this(nom, null);
+        contenu = new ArrayList<>();
+        this.parent = this;
+    }
+
+    public Dossier(String nom, Dossier parent) {
+        super(nom);
+        this.parent = parent;
+        contenu = new ArrayList<>();
+        if (parent != null) {
+            this.parent.ajouterElement(this);
+        }
+    }
+
+    public void ajouterElement(Element element) {
+        contenu.add(element);
+    }
+
+    public void afficheContenu() {
+        System.out.println("Contenu du dossier '"
+                + this.getNom()
+                + "'(dossier parent '"
+                + this.parent.getNom()
+                + "'): ");
+        for (Element e : contenu) {
+            System.out.println(e);
+        }
+        System.out.println();
+    }
+
+    public int getTaille() {
+        int taille = 0;
+        for (Element e : contenu) {
+            if (e instanceof Fichier){
+                taille += ((Fichier) e).getTaille();
+            } else {
+                Dossier dossier = (Dossier) e;
+                taille += dossier.getTaille();
+            }
+        }
+        return taille;
+    }
+
+    @Override
+    public void afficheTaille() {
+        System.out.println("Taille du dossier '" + this.getNom() + "': " + this.getTaille()+"\n");
+    }
+
+    @Override
+    public String toString() {
+        return "(R)-" + super.toString();
+    }
+
+    public void afficheFichier(int i) {
+        System.out.println("Fichier(s) dont la taille est sup. a " + i + " :");
+        chercherFichier(i);
+    }
+
+    private void chercherFichier(int i) {
+        for (Element e : contenu) {
+            if (e instanceof Fichier) {
+                Fichier fichier = (Fichier) e;
+                if (fichier.getTaille() > i) {
+                    System.out.println(fichier);
+                }
+            } else {
+                Dossier dossier = (Dossier) e;
+                dossier.chercherFichier(i);
+            }
+        }
+    }
+}

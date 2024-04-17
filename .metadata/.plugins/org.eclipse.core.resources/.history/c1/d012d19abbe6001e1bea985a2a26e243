@@ -1,0 +1,49 @@
+package ex2;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class ListeAnimaux {
+	private List<Animal> lAnimaux;
+
+	public ListeAnimaux() {
+		lAnimaux = new ArrayList<>();
+	}
+
+	public void ajouter(Animal animal) {
+		lAnimaux.add(animal);
+	}
+
+	@Override
+	public String toString() {
+		String retour = "";
+		for (Animal animal : lAnimaux) {
+			retour = retour.concat(animal.toString() + "\n");
+		}
+		return retour;
+	}
+
+	public void cacophonie() {
+		for (Animal animal : lAnimaux) {
+			animal.cacophonie();
+		}
+	}
+
+	public void afficheNbPattes(int nbPattes) {
+		for (Animal animal : lAnimaux) {
+			if (nbPattes == 0) {
+				if (animal instanceof AnimalSansPatte) {
+					System.out.println(animal);
+				}
+			}else if( animal instanceof AnimalAvecPattes ) {
+				if (((AnimalAvecPattes) animal).getNbPattes() == nbPattes){
+					// Si l'animal a des pattes et qu'il en a le bon nombre alors on l'affiche
+					System.out.println(animal);
+				}
+			}
+
+		}
+	}
+
+}

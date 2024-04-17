@@ -1,0 +1,20 @@
+package ex4;
+
+public class jouer {
+
+public static void main(String[] args) {
+		JeuDeCarte52 jeu = new JeuDeCarte52();
+		
+		System.out.println(jeu);
+		System.out.println("-----");
+		jeu.triPuissance();
+		System.out.println(jeu);
+		System.out.println("-----");
+		jeu.triCouleur();
+		System.out.println(jeu);
+		System.out.println("-----");
+		jeu.melange();
+		System.out.println(jeu);
+	}
+
+}

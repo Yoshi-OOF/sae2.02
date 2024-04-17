@@ -1,0 +1,21 @@
+package ex2;
+
+public abstract class AnimalSansPatte extends Animal {
+	private double longueur;
+
+	protected AnimalSansPatte(String race, double poids, double longueur) {
+		super(race, poids);
+		this.longueur = longueur;
+	}
+
+	public double getLongueur() {
+		return longueur;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + ", " + getLongueur() + "cm";
+	}
+	
+	public abstract void cacophonie();
+}

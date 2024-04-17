@@ -1,0 +1,35 @@
+package sae.solver;
+
+import sae.graph.Graph;
+import sae.graph.GraphSoluce;
+import sae.graph.Node;
+
+public class SolverWithAstar implements Solver {
+	private Node start;
+	private Node end;
+	private GraphSoluce soluce;
+	private int steps;
+	
+	public SolverWithAstar( Node start, Node end) {
+		super();
+		this.start = start;
+		this.end = end;
+		soluce = new GraphSoluce();
+	}
+	
+	@Override
+	public void resolve() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public GraphSoluce getSoluce() {
+		return soluce;
+	}
+
+	@Override
+	public int getSteps() {
+		return steps;
+	}
+}

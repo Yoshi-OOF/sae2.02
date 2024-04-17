@@ -1,0 +1,27 @@
+package ex2;
+
+public abstract class Animal {
+	private String race;
+	private double poids;
+
+	protected Animal(String race, double poids) {
+		this.race = race;
+		this.poids = poids;
+	}
+
+	@Override
+	public String toString() {
+		return this.getClass() + ": " + getRace() + ", " + getPoids() + "kg";
+	}
+
+	public String getRace() {
+		return race;
+	}
+
+	public double getPoids() {
+		return poids;
+	}
+	
+	public abstract void cacophonie();
+
+}

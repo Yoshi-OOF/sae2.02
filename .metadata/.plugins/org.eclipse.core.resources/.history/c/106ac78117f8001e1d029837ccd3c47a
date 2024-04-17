@@ -1,0 +1,43 @@
+package sae.solver;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import sae.graph.GraphSoluce;
+import sae.graph.Node;
+
+public class SolverWithBFS {
+
+	private Node nodeA;
+	private Node nodeB;
+	private GraphSoluce soluce;
+	
+	public SolverWithBFS(Node A, Node B){
+		this.nodeA = A;
+		this.nodeB = B;
+		this.soluce = new GraphSoluce();
+		
+	}
+	
+	public void resolve(Node start, Node end) {
+		List<Node> file = new LinkedList<Node>();
+		List<Node> marque = new ArrayList<Node>();
+		marque.add(start);
+		file.add(start);
+		while (!file.isEmpty()) {
+			Node current = file.remove(0);
+			for (Node voisin : current.neighbors()) {
+				if (!marque.contains(voisin)) {
+					voisin.setPrevious(current);
+					marque.add(voisin);
+					file.add(voisin);
+				}
+			}
+		}
+		GraphSoluce.get
+	}
+	
+	
+	
+}

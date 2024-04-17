@@ -1,0 +1,19 @@
+package sae.graphe;
+
+import java.util.Map;
+
+
+import sae.dungeon.Dungeon;
+import sae.dungeon.Room;
+
+public class Dungeon2Graph {
+	
+	private Map<Room, Node> couples;
+	
+	public Dungeon2Graph(Dungeon dungeon) {
+		super();
+		
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package Exo1;
+
+public class Histoire {
+    public static void main(String[] args) {
+        Humain personnage = new Humain("Joe");
+        personnage.sePresenter();
+        personnage.boire();
+    }
+}

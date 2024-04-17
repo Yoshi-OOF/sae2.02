@@ -1,0 +1,27 @@
+package Exo1;
+
+public class Humain {
+    private String nom;
+    private String boissonFavorite;
+
+    public Humain(String nom) {
+        this.nom = nom;
+        this.boissonFavorite = "eau"; // Boisson par défaut
+    }
+
+    public void parler(String texte) {
+        System.out.println(this.nom + " - " + texte);
+    }
+
+    public void sePresenter() {
+        parler("Bonjour, je suis " + nom + " et ma boisson favorite est " + boissonFavorite + ".");
+    }
+
+    public void boire() {
+        parler("Ah ! Un bon verre de " + boissonFavorite + " ! GLOUPS !");
+    }
+
+    public String quelEstTonNom() {
+        return nom;
+    }
+}

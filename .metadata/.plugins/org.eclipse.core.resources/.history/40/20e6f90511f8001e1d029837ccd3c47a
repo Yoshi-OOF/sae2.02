@@ -1,0 +1,27 @@
+package sae.solver;
+
+import java.util.List;
+
+import sae.graph.GraphSoluce;
+import sae.graph.Node;
+
+public class SolverWithBFS {
+
+	private Node nodeA;
+	private Node nodeB;
+	private GraphSoluce soluce;
+	
+	public SolverWithBFS(Node A, Node B){
+		this.nodeA = A;
+		this.nodeB = B;
+		this.soluce = new GraphSoluce();
+		
+	}
+	
+	public void resolve(Node start, Node end) {
+		List file = new List();
+	}
+	
+	
+	
+}

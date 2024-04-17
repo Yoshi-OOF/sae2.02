@@ -1,0 +1,23 @@
+package TD3.Exo5;
+
+public abstract class Element {
+    private String nom;
+
+    public Element(String nom) {
+        super();
+        this.nom = nom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    abstract void afficheTaille();
+
+    @Override
+    public String toString() {
+        return nom;
+    }
+
+
+}

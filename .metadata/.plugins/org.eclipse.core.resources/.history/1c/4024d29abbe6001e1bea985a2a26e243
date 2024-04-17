@@ -1,0 +1,40 @@
+package ex4;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+public class JeuDeCarte52 {
+	private static List<Carte> jeu = new ArrayList<>();
+
+	public JeuDeCarte52() {
+		for (int i = 0; i < 52; i++) {
+			jeu.add(new Carte());
+		}
+	}
+
+	@Override
+	public String toString() {
+		String retour = "";
+		for (Carte carte : jeu) {
+			retour = retour.concat(carte.toString() + "\n");
+		}
+		return retour;
+	}
+
+	public void triPuissance() {
+		jeu.sort(Carte.compareByPower);
+	}
+
+	public void triCouleur() {
+		jeu.sort(Carte.compareByColor);
+	}
+
+	public void melange() {
+		Collections.shuffle(jeu);
+	}
+	public void pioche() {
+		
+	}
+}

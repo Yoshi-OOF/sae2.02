@@ -1,0 +1,21 @@
+package ex2;
+
+public class Principale {
+
+	public static void main(String[] args) {
+		ListeAnimaux menagerie = new ListeAnimaux();
+		Chien fosko = new Chien("Labrador",40.0,1);
+		fosko.setNbPattes(3);
+		menagerie.ajouter(fosko);
+		Serpent sneko = new Serpent("Sepent à sonette", 5, 300, true);
+		menagerie.ajouter(sneko);
+		Canard donald = new Canard("Mullard", 4);
+		menagerie.ajouter(donald);
+		
+		//System.out.println(menagerie);
+		menagerie.cacophonie();	
+		
+		menagerie.afficheNbPattes(0);
+	}
+
+}

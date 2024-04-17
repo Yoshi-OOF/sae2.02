@@ -1,0 +1,17 @@
+package Exo3;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class DateTestUnit {
+	
+	@Test
+	public void testDateValide() throws DateException{
+		Date dateValide = new Date(12,12,1245);
+		assertEquals("Pb de jour", 12, dateValide.getJour());
+		assertEquals("Pb de mois", 12, dateValide.getClass());
+		
+	}
+
+}
