@@ -26,6 +26,9 @@ public class Scenarios {
 		solveDungeon(builder.createFourthDungeon());
 		solveDungeon(builder.createFifthDungeon());
 		solveDungeon(builder.createSixthDungeon());
+		solveDungeon(builder.createSeventhDungeon());
+		solveDungeon(builder.createEighthDungeon());
+		
 
 	}
 
@@ -42,8 +45,8 @@ public class Scenarios {
 
 		Node nodeA = mapping.mappedNode(roomA);
 		Node nodeB = mapping.mappedNode(roomB);
-		
-		//System.out.println(graph); // verifiez votre code de transfo ici !
+
+		//System.out.println(mapping); // verifiez votre code de transfo ici !
 
 		System.out.println("Résolution avec BFS");
 
@@ -55,10 +58,9 @@ public class Scenarios {
 		}
 		long endingTime = System.currentTimeMillis();
 		long duration = endingTime - startingTime;
-		
 		GraphSoluce soluceGraphBFS = solverBFS.getSoluce();
-		// System.out.println(soluceGraphBFS.getSoluce()); // verifiez votre solution ici !
-
+		System.out.println(soluceGraphBFS.getSoluce()); // verifiez votre solution ici !
+		
 		DungeonSoluce soluceDonjonBFS = mapping.transform(soluceGraphBFS);
 		
 		System.out.println("Solution   => " + soluceDonjonBFS.getSoluce());
@@ -66,7 +68,7 @@ public class Scenarios {
 		System.out.println("Steps      => " + solverBFS.getSteps());
 
 		System.out.println("---------------------------");
-
+		
 		System.out.println("Résolution avec A*");
 
 		startingTime = System.currentTimeMillis();
@@ -79,7 +81,7 @@ public class Scenarios {
 		duration = endingTime - startingTime;
 		
 		GraphSoluce soluceGraphAstar = solverAstar.getSoluce();
-		// System.out.println(soluceGraphBFS.getSoluce()); // verifiez votre solution ici !
+		//System.out.println(soluceGraphBFS.getSoluce()); // verifiez votre solution ici !
 		
 		DungeonSoluce soluceDonjonAstar = mapping.transform(soluceGraphAstar);
 		

@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import sae.dungeon.Coord;
 import sae.dungeon.Direction;
 import sae.dungeon.Dungeon;
 import sae.dungeon.DungeonSoluce;
@@ -75,7 +74,7 @@ public class Dungeon2Graph {
 			Room currentRoom = mappedRoom(current);
 			Room nextRoom = mappedRoom(next);
 			
-			Direction direction = null;
+            Direction direction = null;
 			for (Direction directionRetour : currentRoom.getNextRooms().keySet()) {
 				if (currentRoom.getNextRooms().get(directionRetour).equals(nextRoom)) {
 					direction = directionRetour;
@@ -86,6 +85,8 @@ public class Dungeon2Graph {
 		}
 		return soluce;
 	}
+	
+	
 	
 
 }

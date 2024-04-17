@@ -18,6 +18,9 @@ public class Graph {
         if (nodes.contains(from) && nodes.contains(to)) {
             from.addNeighbour(to);
         }
+        else {
+        	System.out.println("Noeud pas dans Graphe");
+        }
     }
 
     public String toString() {
