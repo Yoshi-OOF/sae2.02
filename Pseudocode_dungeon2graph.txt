@@ -1,0 +1,16 @@
+Dungeon2Graph(Dungeon dungeon)
+    // Initialisation du graphe et du mappage chambre-nœud
+    Créer un nouveau graphe
+    Créer un dictionnaire pour associer les chambres aux nœuds du graphe
+
+    // Convertir chaque chambre en un nœud dans le graphe
+    Obtenir la liste des chambres du donjon
+    Pour chaque chambre dans la liste des chambres
+        Créer un nœud avec le nom et les coordonnées de la chambre
+        Ajouter le nœud au graphe
+        Associer la chambre au nœud dans le dictionnaire
+
+    // Ajouter des arcs pour chaque connexion entre chambres
+    Pour chaque chambre dans la liste des chambres
+        Pour chaque voisin (chambre connectée) de la chambre
+            Ajouter un arc entre le nœud associé à la chambre et le nœud associé au voisin
