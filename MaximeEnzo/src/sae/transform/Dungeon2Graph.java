@@ -18,6 +18,15 @@ public class Dungeon2Graph {
 	private Map<Room,Node> couples;
 	private Graph graph;
 	
+	/*
+	Dungeon2Graph(Dungeon dungeon)
+	On crée un graphe à partir d'un donjon.
+	 -> On récupère la liste des salles du donjon.
+	 -> Pour chaque salle, on crée un noeud correspondant.
+	 -> On ajoute ce noeud au graphe.
+	 -> On crée une correspondance entre la salle et le noeud.
+	 -> Pour chaque salle, on ajoute une arête entre le noeud correspondant et les noeuds correspondants des salles voisines.
+	/*/
 	public Dungeon2Graph(Dungeon dungeon) {
 		super();
 		graph = new Graph();
@@ -57,13 +66,12 @@ public class Dungeon2Graph {
     }
 
 	/*
-	Explication :
+	DungeonSoluce transform(GraphSoluce soluceGraph)
 	On parcourt la liste des noeuds de la solution du graphe en partant de la fin.
-	Pour chaque noeud, on récupère le noeud suivant.
-	On récupère les salles correspondantes à ces deux noeuds.
-	On récupère la direction entre ces deux salles.
-	On ajoute cette direction à la solution.
-	On retourne la solution.
+	 -> Pour chaque noeud, on récupère le noeud suivant.
+	 -> On récupère les salles correspondantes à ces noeuds.
+	 -> On récupère la direction qui permet de passer de la salle courante à la salle suivante.
+	 -> On ajoute cette direction à la solution du donjon.
 	/*/
 	public DungeonSoluce transform(GraphSoluce soluceGraph) {
 		DungeonSoluce soluce = new DungeonSoluce();

@@ -20,6 +20,16 @@ public class SolverWithBFS implements Solver{
         this.steps = 0;
     }
     
+    /*
+    resolve()
+    Résolution du plus court chemin entre deux noeuds avec l'algorithme de parcours en largeur.
+    1. On crée une file et une liste de marquage.
+    2. On ajoute le noeud de départ à la file et à la liste de marquage.
+    3. Tant que la file n'est pas vide, on retire le premier élément de la file.
+     -> Pour chaque voisin du noeud courant, si le voisin n'est pas marqué, on le marque, on l'ajoute à la file et on lui attribue le noeud courant comme précédent.
+    4. On incrémente le nombre d'étapes.
+    5. On remonte le chemin à partir du noeud d'arrivée en ajoutant chaque noeud à la solution.
+    /*/
     @Override
     public void resolve() {
     	this.soluce = new GraphSoluce();
