@@ -16,7 +16,7 @@ public class GraphSoluce {
 	}
 	
 	public List<Node> getSoluce() {
-        return new ArrayList<>(soluce); // retourne une copie de la liste
+        return new ArrayList<>(soluce);
     }
 	
 	public String toString() {
