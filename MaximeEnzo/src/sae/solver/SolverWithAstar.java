@@ -23,6 +23,15 @@ public class SolverWithAstar implements Solver {
 
 	/*
 	resolve()
+	Résolution du plus court chemin entre deux noeuds avec l'algorithme A*.
+	1. On crée une liste ouverte et une liste fermée.
+	2. On ajoute le noeud de départ à la liste ouverte.
+	3. Tant que la liste ouverte n'est pas vide, on retire le noeud avec le plus petit coût de la liste ouverte.
+	 -> Si le noeud courant est le noeud d'arrivée, on remonte le chemin à partir du noeud d'arrivée en ajoutant chaque noeud à la solution.
+	 -> Pour chaque voisin du noeud courant, si le voisin n'est pas dans la liste fermée et que le voisin n'est pas dans la liste ouverte ou que le coût du voisin est inférieur au coût du noeud courant, on met à jour le coût du voisin, on calcule l'heuristique du voisin, on ajoute le voisin à la liste ouverte et on lui attribue le noeud courant comme précédent.
+	4. On ajoute le noeud courant à la liste fermée.
+	5. On incrémente le nombre d'étapes.
+	6. On remonte le chemin à partir du noeud d'arrivée en ajoutant chaque noeud à la solution.
 	/*/	
 	@Override
 	public void resolve() {
