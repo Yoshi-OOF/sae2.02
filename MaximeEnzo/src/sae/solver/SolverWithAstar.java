@@ -23,7 +23,6 @@ public class SolverWithAstar implements Solver {
 
 	/*
 	resolve()
-
 	/*/	
 	@Override
 	public void resolve() {
