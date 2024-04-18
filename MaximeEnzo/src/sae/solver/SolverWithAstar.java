@@ -20,7 +20,11 @@ public class SolverWithAstar implements Solver {
 		this.end = end;
 		this.steps = 0;
 	}
-	
+
+	/*
+	resolve()
+
+	/*/	
 	@Override
 	public void resolve() {
 		soluce = new GraphSoluce();
@@ -54,7 +58,6 @@ public class SolverWithAstar implements Solver {
     }
 
     private int distance(Node a, Node b) {
-        // Calculate the distance between two nodes.
     	int x1 = a.getCoords().getX();
     	int y1 = a.getCoords().getY();
     	int x2 = b.getCoords().getX();

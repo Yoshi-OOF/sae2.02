@@ -47,6 +47,7 @@ public class Dungeon2Graph {
 		
 	}
 	
+	// On récupère le noeud correspondant à la salle donnée.
 	public Node mappedNode(Room room) {
 		return couples.get(room);
 	}
