@@ -1,14 +1,2 @@
-INDEX VERSION 1.134+C:\Users\maxim\Documents\Code\Eclipse\.metadata\.plugins\org.eclipse.jdt.core
-3318135131.index
-2664131997.index
-1865797976.index
-1570852477.index
-873586130.index
-1669199070.index
-1962340871.index
-2466916627.index
-1526866882.index
-89101512.index
-3846509059.index
-4103571623.index
-3574201286.index
+INDEX VERSION 1.134+C:\Users\andre\Desktop\sae2.02\.metadata\.plugins\org.eclipse.jdt.core
+3914025049.index
