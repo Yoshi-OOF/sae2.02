@@ -51,6 +51,7 @@ public class Dungeon2Graph {
 		return couples.get(room);
 	}
 	
+	// On parcourt la liste des salles du donjon pour trouver la salle correspondante au noeud donné.
 	public Room mappedRoom(Node node) {
 		for (Room room : couples.keySet()) {
 			if (couples.get(room).equals(node)) {
